@@ -1,0 +1,181 @@
+/* styles.css */
+body {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    color:white;
+    overflow-x:hidden;
+}
+
+.heads {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+}
+.button {
+    font-size: 20px;
+    /* padding-top:15px; */
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid yellow;
+    border-radius: 0.4rem;
+    background-color: black;
+    color: white;
+    width: 100px;
+}
+
+.button:hover {
+    background-color: whitesmoke;
+    border-color: black;
+    border-radius: 0.4rem;
+    color: black;
+}
+
+.editemp{
+    background-color: black;
+    color: white;
+  border:1px solid yellow;
+  border-radius:0.4rem;
+  width:160px;
+  height:40px;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  /* padding-top:10px; */
+}
+
+.editemp:hover{
+    background-color: whitesmoke;
+    border-color: black;
+    border-radius: 0.4rem;
+    color: black;
+}
+
+.ua {
+    height:40%;
+    width: 40%;
+    margin: 35px;
+    margin-left: 28px;
+    border: 1px solid white;
+    text-align: start;
+
+}
+
+.ualabel {
+    height: 20px;
+    border: 1px solid white;
+    padding: 7px;
+}
+
+.text {
+    height: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.functionalities{
+    height:40px;
+    width:80%;
+    margin-left:100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:40px;
+}
+
+.classbutton {
+    font-size: 20px;
+    /* padding-top:15px; */
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid yellow;
+    border-radius: 0.4rem;
+    background-color: black;
+    color: white;
+    width: auto;
+}
+
+.classbutton:hover {
+    background-color: whitesmoke;
+    border-color: black;
+    border-radius: 0.4rem;
+    color: black;
+}
+
+
+/* .dashboard {
+    display: flex;
+    justify-content: space-around;
+    background-color:black;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart {
+    width: 30%;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.events {
+    margin: 20px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.payroll {
+    margin: 20px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #f0f0f0;
+} */

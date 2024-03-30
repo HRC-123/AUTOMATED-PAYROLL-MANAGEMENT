@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dashboard_employee.css">
+    <script src="/dashboard_employee.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
+    <title>Employee Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const monthNames = <%-monthNames%>; // Deserialize employeeNames
+        const employeeSalaries = <%-employeeSalaries%>;
+        const employeeLeaves = <%-employeeLeaves%>;// Deserialize employeeSalaries
+        console.log(monthNames);
+        console.log(employeeSalaries);
+        console.log(employeeLeaves);
+        document.addEventListener("DOMContentLoaded", function () {
+            const salarychartCanvas = document.getElementById('salaryChart');
+            const leaveschartCanvas = document.getElementById('leavesChart');
+            const chartContext = salarychartCanvas.getContext('2d');
+            const chartCont = leaveschartCanvas.getContext('2d');
+
+            const salarychart = new Chart(chartContext, {
+                type: 'bar',
+                data: {
+                    labels: monthNames,
+                    datasets: [{
+                        label: 'Employee Salary',
+                        data: employeeSalaries,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor:'rgba(75, 192, 192, 1)',
+                        borderWidth:1
+                    }],
+
+
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: false,
+                    title: {
+                        display: true,
+                        text: 'Employee Salary Chart',
+                    },
+                }
+
+            });
+
+
+
+            const leavechart = new Chart(chartCont, {
+                type: 'bar',
+                data: {
+                    labels: monthNames,
+                    datasets: [{
+                        label: 'Employee Leaves',
+                        data: employeeLeaves,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor:'rgba(255, 99, 132, 1)',
+                        borderWidth:1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: false,
+                    title: {
+                        display: true,
+                        text: 'Employee Leave Chart'
+                    }
+                }
+            });
+        });
+
+        
+           
+    </script>
+</head>
+
+<body>
+
+    <div class="heads">
+        <div style="font-size:35px;">Welcome to the dashboard :
+            <b>
+                <%= employee.fullName.toUpperCase() %>
+                    (<%= employee.role.toUpperCase() %>)
+            </b>
+        </div>
+
+        <form action="/viewemployee" method="">
+            <a href="/viewemployee/<%= employee._id %>" style="text-decoration:none;">
+                <div class="editemp">
+                    <div>View Details</div>
+                </div>
+
+            </a>
+        </form>
+
+        <a href="/login" style="text-decoration:none;color:black;">
+            <button class=" button">Logout</button>
+        </a>
+    </div>
+     
+    <div class="functionalities">
+        <a href="/leaveform/<%= employee._id %>" style="text-decoration:none;color:black;">
+            <button class="classbutton">Apply for Leave</button>
+        </a>
+
+        <a href="https://incometaxindia.gov.in/forms/income-tax%20rules/itrform12bb.pdf" style="text-decoration:none;color:black;" target="_blank" download>
+            <button class="classbutton" id="downloadButton" onclick="downloadFile()">IT Decleration</button>
+        </a>
+
+        <a href="https://incometaxindia.gov.in/forms/income-tax%20rules/itrform12bb.pdf" style="text-decoration:none;color:black;" target="_blank" download>
+            <button class="classbutton" id="downloadButton">Payslip/Paycheque</button>
+        </a>
+    </div>
+
+    
+    <div class="graphs" style="display:flex;flex-direction:row;justify-content:space-evenly;margin:40px;">
+        <canvas id="salaryChart" style="width:500px;height:400px;"></canvas>
+        <canvas id="leavesChart" style="width:500px;height:400px"></canvas>
+    </div>
+
+    <div class="ua">
+        <div class="ualabel">Upcoming Acivities</div>
+        <div class="text">Company Established Day<div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+    </div>
+</body>
+
+</html>

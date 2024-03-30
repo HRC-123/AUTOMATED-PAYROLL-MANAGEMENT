@@ -1,0 +1,27 @@
+footer{
+  background-color: #10181f;
+  color:white;
+  margin-top:0px;
+  font-size:20px;
+  
+}
+
+a{
+  color:white;
+}
+.foot{
+  height:5%;
+   display:flex;
+   justify-content: space-evenly; 
+}
+
+.inputs{
+  height:30px;
+  text-align:center;
+}
+
+.submit{
+  color:black;
+  width:80px;
+  height:30px;
+}

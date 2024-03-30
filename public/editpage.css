@@ -1,0 +1,15 @@
+
+body {
+    background-color: #f8f9fa; /* Set a light background color for better contrast */
+}
+
+.table-black {
+    background-color: black;
+    color: white;
+}
+
+/* Optional: Add some padding to the table cells for better readability */
+.table-black tbody td,
+.table-black thead th {
+    padding: 10px;
+}

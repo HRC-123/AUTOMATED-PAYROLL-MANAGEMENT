@@ -1,0 +1,34 @@
+/* Importing Google font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+.p {
+    color:linear-gradient(to right top, #051937, #004c70, #008489, #37ba7c, #cde664);;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.p span {
+    color:#98D7C2;
+    position: relative;
+}
+
+.p span::before {
+    content: "";
+    height: 30px;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    background: #98D7C2;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+.p span.stop-blinking::before {
+    animation: none;
+}
+
+@keyframes blink {
+    50% { opacity: 0 }
+}

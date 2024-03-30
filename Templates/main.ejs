@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated Payroll System</title>
+
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="text.css" />
+  <link rel="stylesheet" href="text-2.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- <link rel="stylesheet" href="companies.css"> -->
+  <script>
+
+    $(document).ready(function () { $(this).scrollTop(0); });
+
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <img class="logo" src="./logo/png/logo-no-background.png" alt="Logo" />
+      <div class="heading">Automated Payroll and Company Expenses Management</div>
+      <a href="#intro" class="wwa f">
+        <p>Who we are</p>
+      </a>
+      <a href="#wwd" class="wwa f">
+        <p>Features</p>
+      </a>
+      <a href="#thing" class="wwa f">
+        <p>About Us</p>
+      </a>
+      <a href="login">
+        <button class="button">Login</button>
+      </a>
+    </div>
+    <!-- <div class="progress"></div> -->
+  </header>
+
+  <main id="intro">
+    <div class="intro" id="intro">
+      <span class="main-head">Unlock the Power of Seamless Payroll Management?</span>
+      <div class="sub-head">
+        <!-- <ul> -->
+        <!-- <li><p class="sub-head-1"> -->
+        <p class="p">Are you ready to simplify your <span></span></p>
+        <!-- payroll processes?</p>
+        <p class="p">boost efficiency?</p>
+        <p class="p">ensure compliance?</p>
+        <p class="p">Look no further.</p> -->
+        <!-- </p></li> -->
+        <!-- <li><span class="sub-head-2">[Your Payroll Management Website] is your trusted partner in payroll excellence.</span></li>
+     <li><span class="sub-head-3">Join the ranks of businesses that trust us to handle their payroll with precision and care. </span></li>
+     <li><span class="sub-head-4">Let's embark on a journey to a more efficient and compliant payroll management system together.</span></li> 
+    <li><span class="sub-head-5">Ready to get started? Sign up now for a free trial and experience the future of payroll management.</span></li> 
+    </ul> -->
+      </div>
+      <div class="extra-flex">
+        <div class="extra">Why not Sign up Now?</div>
+        <a href="register">
+          <button class="button">Sign Up</button>
+        </a>
+      </div>
+      <div class="extra">We offer:</div>
+      <div id="container">
+        <span id="text1"></span>
+        <span id="text2"></span>
+      </div>
+
+      <svg id="filters">
+        <defs>
+          <filter id="threshold">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                        0 1 0 0 0
+                                        0 0 1 0 0
+                                        0 0 0 255 -140" />
+          </filter>
+        </defs>
+      </svg>
+
+    </div>
+
+    <div class="wwd" id="wwd">
+      <video class="video" autoplay muted loop>
+        <source src="payroll-rev.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+
+    <!-- TODO:Add new things here -->
+
+    <div class="thing" id="thing">
+      <div class="quote">
+        In the race for success, automated payroll management isn't an option;
+        it's a critical component of the winning strategy
+      </div>
+    </div>
+
+
+
+    <footer>
+      <div class="foot">
+        <a href="#intro" style="color:white;">Home</a>
+        <a href="#intro" style="color:white;">Who we are</a>
+        <a href="#wwd" style="color:white;">Features</a>
+        <a href="#thing" style="color:white;">About Us</a>
+        <div>
+          <input placeholder="Enter Email" class="inputs">
+          <button class="submit" onclick="#">Submit</button>
+        </div>
+      </div>
+      <div>www.automatedpayrollmanagement.com/by/ramcharan/rahul</div>
+
+    </footer>
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="textscript.js" defer></script>
+  <script src="text-2.js" defer></script>
+  <!-- <script src="companies.js" defer></script> -->
+
+</body>
+
+</html>

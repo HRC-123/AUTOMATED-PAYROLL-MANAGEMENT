@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= locals.title %>
+    </title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="/admin_dashboard.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+       
+        const employeeNames = <%-employeeNames%>; // Deserialize employeeNames
+        const employeeSalaries = <%-employeeSalaries%>;
+        const employeeLeaves = <%-employeeLeaves%>;// Deserialize employeeSalaries
+        console.log("Employee Names " + employeeNames);
+        console.log("Employee Names " + employeeSalaries);
+        console.log("Employee Names " + employeeLeaves);
+        document.addEventListener("DOMContentLoaded", function () {
+            const salarychartCanvas = document.getElementById('salaryChart');
+            const leaveschartCanvas = document.getElementById('leavesChart');
+            const chartContext = salarychartCanvas.getContext('2d');
+            const chartCont = leaveschartCanvas.getContext('2d');
+
+            const salarychart = new Chart(chartContext, {
+                type: 'bar',
+                data: {
+                    labels: employeeNames,
+                    datasets: [{
+                        label: 'Employee Salary',
+                        data: employeeSalaries,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor:'rgba(75, 192, 192, 1)',
+                        borderWidth:1
+                    }],
+
+
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: false,
+                    title: {
+                        display: true,
+                        text: 'Employee Salary Chart',
+                    },
+                }
+
+            });
+
+
+
+            const leavechart = new Chart(chartCont, {
+                type: 'bar',
+                data: {
+                    labels: employeeNames,
+                    datasets: [{
+                        label: 'Employee Leaves',
+                        data: employeeLeaves,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor:'rgba(255, 99, 132, 1)',
+                        borderWidth:1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: false,
+                    title: {
+                        display: true,
+                        text: 'Employee Leave Chart'
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="heads">
+        <div>Welcome to the dashboard :
+            <b>
+                <%= emp.fullName.toUpperCase() %>
+                    (<%= emp.role.toUpperCase() %>)
+            </b>
+        </div>
+
+        <form action="/editPage" method="">
+            <a href="/editpage/<%= emp._id %>" style="text-decoration:none;">
+                <div class="editemp">
+                    <div>Edit Employee Details</div>
+                </div>
+
+            </a>
+        </form>
+
+        <a href="/login" style="text-decoration:none;color:black;">
+            <button class=" button">Logout</button>
+        </a>
+    </div>
+
+
+    <div class="cont">
+        <div class="container">
+            <div class="inner" style="background-color:smokyblue">
+                <div>Gross Profits </div>
+                <div>20000</div>
+            </div>
+            <div class="inner" style="">
+                <div>Avg Leaves taken</div>
+                <div>
+                    <%= avgleaves %>
+                </div>
+            </div>
+            <div class="inner" style="">
+                <div>Gross Salary Disturbution</div>
+                <div>
+                    <%= salary %>
+                </div>
+            </div>
+            <div class="inner" style="">
+                <div>Total Employees </div>
+                <div>
+                    <%= count %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="graphs" style="display:flex;flex-direction:row;justify-content:space-evenly;">
+        <canvas id="salaryChart" style="width:500px;height:400px;"></canvas>
+        <canvas id="leavesChart" style="width:500px;height:400px"></canvas>
+    </div>
+
+    <div class="ua">
+        <div class="ualabel">Upcoming Acivities</div>
+        <div class="text">Company Established Day<div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+        <div class="text">Company Established Day <div>Nov 7</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

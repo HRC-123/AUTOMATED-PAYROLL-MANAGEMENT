@@ -1,0 +1,30 @@
+ @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Martian+Mono:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+#container {
+    position: relative;
+    margin: auto;
+    width: 100vw;
+    height: 80pt;
+    top: 0;
+    bottom: 0;
+    left:10px;
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+    position: absolute;
+    width: 80%;
+    display: inline-block;
+    left:30px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60pt;
+    color:#B84901;
+    /* text-align: center; */
+
+    user-select: none;
+}
